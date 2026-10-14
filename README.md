@@ -4,6 +4,22 @@ Run coding agents (Codex, Claude Code) on [NKIBench](https://github.com/zhang677
 score them the same way: one numerical correctness check, latency measured by the AccelOpt protocol, and an independent
 re-measurement of every final kernel.
 
+## What's included
+
+NKIBench has 14 kernels. The published results cover 3 of them:
+
+| Kernel | Type | Baseline | Theoretical bound | Baseline % of peak |
+|---|---|---|---|---|
+| `matmul_K5120_M4096_N12288` | compute-bound matmul | 31.54 ms | 21.70 ms | 68.8% |
+| `silu_M4096_N7168` | memory-bound elementwise | 1.215 ms | 0.534 ms | 43.9% |
+| `transpose_matmul_K2048_M4096_N10944` | matmul starting close to its bound | 9.475 ms | 7.73 ms | 81.6% |
+
+- **Codex results:** 3 independent runs per kernel at a 30-minute budget, 9 runs in total. Every run has its final
+  kernel, its diff, and its metadata in `results/kernels/`. Summary in `results/README.md`.
+- **Scripts:** `setup_workspaces.py` builds all 14 kernels by default, so the kit runs on the full suite, not only these 3.
+- **Bounds:** the baselines above were measured on our instance. Re-measure on yours, since latency varies a few
+  percent between sessions. The bound comes from AccelOpt's peak model.
+
 ## Repository layout
 
 ```
