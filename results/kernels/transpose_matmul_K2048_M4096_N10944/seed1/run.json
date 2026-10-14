@@ -1,0 +1,1 @@
+{"agent":"codex","case":"transpose_matmul_K2048_M4096_N10944","seed":1,"model":"gpt-5.6-luna","reasoning":"high","minutes_budget":30,"wall_seconds":765}

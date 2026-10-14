@@ -1,0 +1,11 @@
+diff --git a/kernel.py b/kernel.py
+index 62e7f11..9c20be7 100644
+--- a/kernel.py
++++ b/kernel.py
+@@ -39,4 +39,4 @@ def kernel(v1, v2):
+                 ' end loop i4 '
+             ' end loop i2 '
+         ' end loop i0 '
+-    return v3
+\ No newline at end of file
++    return v3

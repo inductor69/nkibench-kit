@@ -1,0 +1,3 @@
+This kit uses NKIBench kernels, reference implementations, benchmark wrapper, and peak model from AccelOpt
+(https://github.com/zhang677/AccelOpt), licensed under the Apache License 2.0. The kit does not redistribute AccelOpt
+files; setup_workspaces.py copies them from a local AccelOpt checkout.
